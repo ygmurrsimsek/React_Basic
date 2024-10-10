@@ -1,0 +1,10 @@
+body{
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  background-image: url(images/dollar-banknotes-frame_1150-6686.avif);
+  background-repeat: no-repeat;
+  background-size: cover;/*arka plan görüntüsünün tüm ekrana sığacağı anlamına gelir*/
+  background-position:center;
+
+}

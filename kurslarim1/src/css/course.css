@@ -1,0 +1,53 @@
+.course-main{
+    display:flex;
+    flex-direction: row;
+    align-items: center;
+    margin: 25px;
+    padding: 5px;
+    justify-content: center; /*ortalıyoruz*/
+}
+.course{
+    border: 1px solid rgb(188, 182, 182);
+    border-top: none;
+    margin: 10px;
+    padding: 5px;
+    box-shadow: 0 0 6px 4px rgb(211, 206, 206);
+}
+
+.course:hover{
+    box-shadow: 0 0 10px 8px rgb(211, 206, 206);
+}
+.image-style{
+    border-radius: 5px;
+    justify-content: center;
+}
+
+.h4-title{
+    font-family:Georgia, 'Times New Roman', Times, serif;
+    font-size: large;
+    padding: 5px;
+    text-align: center;
+}
+
+.text{
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    padding: 5px;;
+}
+.price{
+    font-weight: bold;
+    font-size:medium;
+    padding-right: 10px;
+    text-align: right;
+}
+
+.link{
+    text-decoration: none;
+    color: rgba(11, 11, 237, 0.858);
+
+}
+.link-align{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 5px;
+}

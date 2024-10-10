@@ -1,0 +1,13 @@
+.todo-icons{
+    font-size:20px;
+    margin-right: 7px;
+}
+
+.newTodo{
+    display:flex;
+    flex-direction:row;
+    align-items:center;justify-content:space-between;width:500px;
+    margin-top:50px;
+    border:1px solid lightgrey;
+    padding:10px 0px
+}

@@ -1,0 +1,25 @@
+{
+  "users": [
+    {
+      "name": "yagmur",
+      "age": 22,
+      "password": "asdaa",
+      "email": "adsddsf",
+      "id": "1"
+    },
+    {
+      "id": "2",
+      "name": "Jane Doe",
+      "age": 25,
+      "password": "yy",
+      "email": "fghfgh"
+    },
+    {
+      "id": "3",
+      "name": "DODO",
+      "age": 21,
+      "password": "aaa",
+      "email": "adsddsf"
+    }
+  ]
+}

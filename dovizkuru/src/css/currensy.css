@@ -1,0 +1,52 @@
+.div-currensy{
+    border: 1px solid black;
+    margin:50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    width: 500px;
+    height: 165px;
+}
+
+.amount{
+    height: 30px;
+    width: 80px;
+    background: transparent;
+    margin-right: 15px;
+    margin-left: 15px;
+}
+
+.from-currensy-option{
+    width: 70px;
+    height: 30px;
+    padding: 5px;
+}
+
+.to-currensy-option{
+    width: 70px;
+    height: 30px;
+    padding: 5px;
+}
+
+.result{
+    height: 30px;
+    width: 80px;
+    background: transparent;
+    margin-right: 15px;
+    margin-left: 15px;
+}
+
+.button{
+  margin:15px;
+  padding: 5px;
+}
+
+.button-exchange{
+    padding: 6px;
+    border-radius: 5px;
+    width: 60px;
+    background-color: rgb(143, 166, 167);
+    color: white;
+    cursor: pointer;
+}
