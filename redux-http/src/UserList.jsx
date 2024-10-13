@@ -1,6 +1,7 @@
 import React,{useEffect} from 'react'
 import {useDispatch,useSelector} from 'react-redux'
 import { AllUsers } from './redux/userSlice';
+import User from './redux/User.jsx';
 function UserList() {
     const dispatch=useDispatch();
 
@@ -12,7 +13,11 @@ function UserList() {
     console.log(users);
   return (
     <div>
-      {}
+      {
+      users && users.map((kullanicilar)=>(
+        <User userlar={kullanicilar}/>
+      ))
+      }
     </div>
   )
 }
