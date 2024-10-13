@@ -4,7 +4,7 @@ import axios from 'axios';
 const initialState = {
   users:[],
   loading: false
-}
+}//bu statemizin ilk halidir.biz bu çekilen verilerle bu usersi doldurmamız gerek.
 
 //BU SİTENİN ÖRNEĞİ
 // const fetchUserById = createAsyncThunk(
@@ -18,7 +18,6 @@ const initialState = {
 export const AllUsers=createAsyncThunk('users',async() => 
     {
         const response= await axios.get('https://jsonplaceholder.typicode.com/users');
-        console.log(response.data);
         return response.data;
     }
     //bu veriyi çeken kodu dışarıya açmak için;
@@ -32,6 +31,9 @@ export const userSlice = createSlice({
   },
   extraReducers:(builder)=> {
     //http isteği olur ise bu kullanılır.
+    builder.addCase(AllUsers.fulfilled,(state,action)=>{
+      state.users=action.payload;
+    })
   }
 })
 
