@@ -8,11 +8,22 @@
 
 .todo-input{
     width: 500px;
-    padding: 10px;
+    padding: 10px 0px;
+    padding-left: 3px;
     border: none;
     border-bottom: 1px solid rgb(135, 131, 131);
     outline: none;
     box-shadow: 5px 5px 10px red;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.todo-input-two{
+    width: 400px;
+    padding: 3px;
+    border: none;
+    border-bottom: 1px solid rgb(135, 131, 131);
+    box-shadow: 1px  1px  rgb(135, 131, 131);
+    outline: none;
     font-family: 'Courier New', Courier, monospace;
 }
 
@@ -30,6 +41,7 @@
 .todo{
     width:500px;
     display:flex;
+    padding: 10px;
     flex-Direction: column;
     align-items: flex-end;
     justify-content: center

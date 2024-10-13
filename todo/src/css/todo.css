@@ -9,5 +9,6 @@
     align-items:center;justify-content:space-between;width:500px;
     margin-top:50px;
     border:1px solid lightgrey;
-    padding:10px 0px
+    padding:10px 0px;
+    padding-left: 3px;
 }
