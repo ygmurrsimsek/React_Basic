@@ -4,6 +4,6 @@ import ProductSlice from '../redux/slices/ProductSlice';
 export const store = configureStore({
   reducer: {
     app:AppSLice,
-    product:
+    product:ProductSlice
   },
 })
