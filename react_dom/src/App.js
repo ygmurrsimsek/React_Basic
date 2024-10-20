@@ -8,6 +8,7 @@ import Header from './Component/Header.jsx';
 import NotFoundPAge from './page/NotFoundPage.jsx';
 import Employee from './page/Employee.jsx';
 import Company from './page/Company.jsx';
+import ProductDetails from './page/ProductDetails.jsx';
 function App() {
 
   //ilk olarak routes ve route urlye bu uzantı geldiğinde bu componente git demek istiyor daha sonra o componente gidince de orada yazılan kodları ekranda gösterir.
@@ -24,6 +25,7 @@ function App() {
       </Route>
 
       <Route path='/Product' element={<Product />} />
+      <Route path='/product-details/:id' element={<ProductDetails/>}/>
       <Route path='/Contact' element={<Contact />} />
       <Route path='/*' element={<NotFoundPAge />} />
     </Routes>
