@@ -23,7 +23,7 @@ export const counterSlice = createSlice({
   },
   extraReducers: (builder) => {
       builder.addCase(getAllProduct.pending,(state)=>{
-        state.loading=false;
+        state.loading=true;
       })
       builder.addCase(getAllProduct.fulfilled,(state,action)=>{ 
         state.loading=false;
