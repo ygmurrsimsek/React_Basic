@@ -5,7 +5,7 @@ import axios from 'axios';
 const initialState = {
     products:[]//başlangıç değerleri. BAşta boş ürünler.
     ,
-    selectProduct:{}//bu ürünün detayına gitmek istediğimizde orada tıklanan ürünlerin detayları için boş bir obje oluşturduk.
+    selectedProduct:{}//bu ürünün detayına gitmek istediğimizde orada tıklanan ürünlerin detayları için boş bir obje oluşturduk.buna o ürünleri setlemek için reducersleri kullanırız
     ,
     loading:false
 }
@@ -19,7 +19,9 @@ export const counterSlice = createSlice({
   name: 'product',
   initialState,
   reducers: {
-    
+    setSelectedProduct :(state,action)=>{
+      state.selectedProduct=action.payload;
+    }
   },
   extraReducers: (builder) => {
       builder.addCase(getAllProduct.pending,(state)=>{
@@ -33,6 +35,6 @@ export const counterSlice = createSlice({
 });
 
 // Action creators are generated for each case reducer function
-export const { } = counterSlice.actions
+export const {setSelectedProduct } = counterSlice.actions
 
 export default counterSlice.reducer
