@@ -18,11 +18,16 @@ const writeLocalStorage = (basket) => {
 
 
 
-const basketSlice= createSlice({
+export const basketSlice= createSlice({
     name:'basket',
     initialState,
     reducers:{
+        //burada sepete ürün ekleyeceğiz bu yüzden bizim bir state birde actiona ihtiyaç var .
+        addToBasket :(state,action)=>{
+            //ilk olarak sepette olan ürünlerle eklenen ürünlerin uyuşup uyuşmadığına bakarız yani action ile gelen ürünle statede olan productımda olan ürünlerin idlerini karşılaştırarak olan ürünün üstüne eklenip eklenmediği halini oluşturucaz.
+            const findProduct= state.products && state.products.find((product)=> product.id=== action.payload.id);
 
+        }
     }
 })
 
