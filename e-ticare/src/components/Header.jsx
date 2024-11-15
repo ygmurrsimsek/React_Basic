@@ -1,5 +1,6 @@
 import React from 'react'
 import { useNavigate } from 'react-router-dom';
+import{useSelector} from 'react-redux';
 import resim from '../images/logo1.png';
 import '../componentcss/Header.css';
 import { CiShoppingBasket } from "react-icons/ci";
@@ -26,6 +27,7 @@ function Header() {
             setLightMode(true);
         }
     }
+    const {products}=useSelector((store)=> store.basket);
   return (
     <div style={{display:'flex',flexDirection:'row',alignItems:'center',justifyContent:'space-between',}}>{/*bununla yan yana gelmesini sağladık divlerin ve birini sağa birini sola yasladık.*/}
       <div className='flex-row'>
@@ -39,7 +41,7 @@ function Header() {
                 /*burada icon değişimini yapıyoruz*/
                 lightMode ? <GiMoonBats  className='icons' onClick={Change}/>: <CiLight onClick={Change} className='icons'/> 
             }
-            <Badge badgeContent={4} color="error">
+            <Badge badgeContent={products.length} color="error">
               <CiShoppingBasket style={{marginRight:'4px'}}   className='icons'/>
             </Badge>
         </div>
