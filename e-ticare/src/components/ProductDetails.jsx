@@ -42,13 +42,21 @@ function ProductDetails() {
     const basketToProduct=()=>{
         //Burada sepete ürün ekleme işlemini yapıyoruz.
         //SepetSlicedeki addToBasket actionunu dispatch ederek sepete ekliyoruz.
-        dispatch(addToBasket({id,count}));
+        const payload={
+            id,
+            count,
+            image,
+            description,
+            price,
+            title
+        };
+        dispatch(addToBasket(payload));
     }
     
   return (
     <div style={{marginTop:'30px', display:'flex',flexDirection:'row',justifyContent:'center'}}>
         <div>
-            <img className='image-details' src={image}></img>
+            <img className='image-details' src={image} alt='product'></img>
         </div>
         <div>
             <h2 className='title'>{title}</h2>
