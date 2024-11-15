@@ -6,6 +6,7 @@ import { useDispatch,useSelector } from 'react-redux';
 import { setSelectedProduct } from '../redux/slices/ProductSlice';
 import { IoIosAddCircleOutline } from "react-icons/io";
 import { CiCircleMinus } from "react-icons/ci";
+import { addToBasket } from '../redux/slices/BasketSlice';
 
 function ProductDetails() {
     const {id}=useParams();
@@ -38,6 +39,11 @@ function ProductDetails() {
             return setCount(count-1);
         }
     }
+    const basketToProduct=()=>{
+        //Burada sepete ürün ekleme işlemini yapıyoruz.
+        //SepetSlicedeki addToBasket actionunu dispatch ederek sepete ekliyoruz.
+        dispatch(addToBasket({id,count}));
+    }
     
   return (
     <div style={{marginTop:'30px', display:'flex',flexDirection:'row',justifyContent:'center'}}>
@@ -54,7 +60,7 @@ function ProductDetails() {
                 <CiCircleMinus  onClick={azalt} className='icon-right'  />
             </div>
             <div>
-                <button className='button'>Sepete Ekle</button>
+                <button onClick={basketToProduct} className='button'>Sepete Ekle</button>
             </div>
         </div>
 

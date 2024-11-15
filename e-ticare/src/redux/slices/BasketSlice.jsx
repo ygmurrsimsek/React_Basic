@@ -26,11 +26,23 @@ export const basketSlice= createSlice({
         addToBasket :(state,action)=>{
             //ilk olarak sepette olan ürünlerle eklenen ürünlerin uyuşup uyuşmadığına bakarız yani action ile gelen ürünle statede olan productımda olan ürünlerin idlerini karşılaştırarak olan ürünün üstüne eklenip eklenmediği halini oluşturucaz.
             const findProduct= state.products && state.products.find((product)=> product.id=== action.payload.id);
+            //burada sepette bulunan ürünle yeni eklenen ürünü aynı mı diye kontrol ediyoruz eğer aynıysa sepettekinin miktarını arttıracağız değilse farklı bir ürün olarak sepete ekleyeceğiz.
+            if(findProduct){
+//yani sepette aynı üründen varsa
+                findProduct.count+=action.payload.count;
+                const extraProducts=state.products.filter((product) => product.id != action.payload.id);
+                state.products=[...extraProducts,findProduct];
+                writeLocalStorage(state.products);
+            }
+            else{
+                state.products=[...state.products,action.payload];
+                writeLocalStorage(state.products);
+            }
 
         }
     }
 })
 
-export const { } = basketSlice.actions
+export const { addToBasket} = basketSlice.actions
 
 export default basketSlice.reducer
