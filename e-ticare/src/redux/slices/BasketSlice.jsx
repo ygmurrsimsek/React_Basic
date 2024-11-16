@@ -50,7 +50,7 @@ export const basketSlice= createSlice({
         CalculateTotalAmount:(state)=>{
             state.totalAmount=0;
             state.products && state.products.map((product)=>{
-                state.totalAmount+=product.price;
+                state.totalAmount+=product.price * product.count;
             })
         }
 
