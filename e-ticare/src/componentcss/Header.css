@@ -26,3 +26,6 @@
     font-size: 25px;
     cursor: pointer;
 }
+.badge:hover{
+    cursor: pointer;
+}

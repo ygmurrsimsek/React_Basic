@@ -10,6 +10,8 @@ const loadFromLocalStorage = () => {
 }
 const initialState =({
     products:loadFromLocalStorage(),
+    drawer:false ,//bu sepete tıklanınca açılmasını sağlayacak drawerin
+    totalAmount:0
 })
 
 const writeLocalStorage = (basket) => {
@@ -30,7 +32,7 @@ export const basketSlice= createSlice({
             if(findProduct){
 //yani sepette aynı üründen varsa
                 findProduct.count+=action.payload.count;
-                const extraProducts=state.products.filter((product) => product.id != action.payload.id);
+                const extraProducts=state.products.filter((product) => product.id !== action.payload.id);
                 state.products=[...extraProducts,findProduct];
                 writeLocalStorage(state.products);
             }
@@ -40,9 +42,21 @@ export const basketSlice= createSlice({
             }
 
         }
+        ,
+        degisimDrawer:(state)=>{
+            state.drawer=!state.drawer; //drawer'ın açık olup kapalı olmasını sağlayan reducer.
+        }
+        ,
+        CalculateTotalAmount:(state)=>{
+            state.totalAmount=0;
+            state.products && state.products.map((product)=>{
+                state.totalAmount+=product.price;
+            })
+        }
+
     }
 })
 
-export const { addToBasket} = basketSlice.actions
+export const { addToBasket,degisimDrawer,CalculateTotalAmount} = basketSlice.actions
 
 export default basketSlice.reducer

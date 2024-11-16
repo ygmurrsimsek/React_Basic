@@ -6,7 +6,7 @@ import { useDispatch,useSelector } from 'react-redux';
 import { setSelectedProduct } from '../redux/slices/ProductSlice';
 import { IoIosAddCircleOutline } from "react-icons/io";
 import { CiCircleMinus } from "react-icons/ci";
-import { addToBasket } from '../redux/slices/BasketSlice';
+import { addToBasket, CalculateTotalAmount } from '../redux/slices/BasketSlice';
 
 function ProductDetails() {
     const {id}=useParams();
@@ -51,6 +51,7 @@ function ProductDetails() {
             title
         };
         dispatch(addToBasket(payload));
+        dispatch(CalculateTotalAmount());//bunu yapma sebebimiz yeni ürün eklendiğinde toplam tutarında değişmesi
     }
     
   return (

@@ -8,7 +8,10 @@ import { GiMoonBats } from "react-icons/gi";
 import { CiLight } from "react-icons/ci";
 import { useState } from 'react';
 import Badge from '@mui/material/Badge';
+import { useDispatch } from 'react-redux';
+import { degisimDrawer } from '../redux/slices/BasketSlice';
 function Header() {
+  const dispatch=useDispatch(); //redux'un dispatch metodu ile actionları dispatch ediyoruz.
     const navigate = useNavigate(); //react-router-dom'un navigate hookunu kullanarak sayfa geçişi yapıyoruz.bunu headerdeki logoya tıklayınca ana sayfaya yani menüye home gitmesi için ayarladık navigate ile sayfa yönlendirmesi yaptık.
     //tıklayınca aydınlık ve karanlık modu ayarlayalım.ilk olarak başlangıc durumu olmalı ona göre değişmeli.
     const [lightMode,setLightMode]=useState(true);
@@ -41,8 +44,8 @@ function Header() {
                 /*burada icon değişimini yapıyoruz*/
                 lightMode ? <GiMoonBats  className='icons' onClick={Change}/>: <CiLight onClick={Change} className='icons'/> 
             }
-            <Badge badgeContent={products.length} color="error">
-              <CiShoppingBasket style={{marginRight:'4px'}}   className='icons'/>
+            <Badge badgeContent={products.length} onClick={()=> dispatch(degisimDrawer())} className='badge' color="error">
+              <CiShoppingBasket style={{marginRight:'4px'}}  className='icons'/>
             </Badge>
         </div>
       </div>
