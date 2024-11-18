@@ -2,6 +2,12 @@ import React from 'react'
 import { useFormik } from 'formik';
 import { RegisterFormYup } from '../shemas/RegisterFormShemas';
 function RegisterForm() {
+//bu submite 2 snde veri tabanına gitmiş gibi sonra verileri resetleyelim
+    const submit=(value,action)=>{
+        setTimeout(()=>{
+            action.resetForm(); //formu resetlemek için
+        },2000);
+    }
     const {errors,values,handleChange,handleSubmit} = useFormik({
         initialValues: {
           email: '',
@@ -11,6 +17,7 @@ function RegisterForm() {
           term:false,
         },
         validationSchema:RegisterFormYup,
+        onSubmit:submit
     });
 
 return (
