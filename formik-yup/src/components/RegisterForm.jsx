@@ -1,5 +1,6 @@
 import React from 'react'
 import { useFormik } from 'formik';
+import { RegisterFormYup } from '../shemas/RegisterFormShemas';
 function RegisterForm() {
     const {errors,values,handleChange,handleSubmit} = useFormik({
         initialValues: {
@@ -8,34 +9,41 @@ function RegisterForm() {
           password:'',
           confirmPassword:'',
           term:false,
-        }
+        },
+        validationSchema:RegisterFormYup,
     });
+
 return (
 <div>
     <div className='appp'>
-    <form>
-        <div>
+    <form onSubmit={handleSubmit}>
+        <div className='div-ayar'>
             <label>E-mail:</label>
             <input type="text" id="email" placeholder='E-maili giriniz.' onChange={handleChange} value={values.email}/>
+            {errors.email && <p className='input-error'>{errors.email}</p>/*erros objesinde email çıktısı varsa onu yazdır*/ }
         </div>
-        <div>
+        <div className='div-ayar'>
             <label>Yaş:</label>
             <input type="number" id="age" placeholder='Yaşınızı giriniz.' onChange={handleChange} value={values.age}/>
+            {errors.age && <p className='input-error'>{errors.age}</p>/*erros objesinde email çıktısı varsa onu yazdır*/ }
         </div>
-        <div>
+        <div className='div-ayar'>
             <label>Şifre:</label>
             <input type="password" id="password"  placeholder='Şifrenizi giriniz.' onChange={handleChange} value={values.password}/>
+            {errors.password && <p className='input-error'>{errors.password}</p>/*erros objesinde email çıktısı varsa onu yazdır*/ }
         </div>
 
-        <div>
+        <div className='div-ayar'>
             <label>Şifre Tekrarı:</label>
             <input type="password" id="confirmPassword"  placeholder='Tekrar şifrenizi giriniz.' onChange={handleChange} value={values.confirmPassword}/>
+            {errors.confirmPassword && <p className='input-error'>{errors.confirmPassword}</p>/*erros objesinde email çıktısı varsa onu yazdır*/ }
         </div>
-        <div>
-            <input type="checkbox" style={{width:'25px'}} id="term" onChange={handleChange} value={values.term} />
+        <div className='div-ayar'>
+            <input type="checkbox" style={{width:'25px'}} id="term" onChange={handleChange} value={values.term}/>
             <label>Kullanıcı sözleşmesini onaylıyorum.</label>
+            {errors.term && <p className='input-error'>{errors.term}</p>/*erros objesinde email çıktısı varsa onu yazdır*/ }
         </div>
-        <button className='button'>Kaydet</button>
+        <button type='submit' className='button'>Kaydet</button>
        
     </form>
     </div>
