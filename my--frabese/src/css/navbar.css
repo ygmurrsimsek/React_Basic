@@ -1,0 +1,68 @@
+.navbar{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content:space-between;
+    background-color: rgb(180, 146, 211);
+    width: 100%;
+    height: 80px;
+}
+.main-title{
+    font-family: fantasy;
+    font-size: 20px;
+    margin-left: 20px;
+    font-style: italic;
+    padding: 6px;
+    color: rgb(230, 228, 228);
+}
+.main-title:hover{
+    cursor: pointer;
+}
+.log-out{
+    font-size: 14px;
+    margin-right: 10px;
+    cursor: pointer;
+    color: rgb(230, 228, 228);
+    font-family: fantasy;
+
+}
+.auth{
+    width: 100%;
+    height: 60vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+}
+.input-div{
+    width: 230px;
+    display: flex;
+    flex-direction: column;
+}
+
+.input{
+    border: 1px solid lightgray;
+    padding: 8px;
+    width: 250px;
+    border-radius: 5px;
+    margin: 10px 0px;
+    outline: none;
+}
+.button-div{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.button{
+    border: none;
+    padding: 5px 15px;
+    cursor: pointer;
+    background-color: #9b8c9e;
+    border-radius: 2px;
+    font-family: revert-layer;
+    margin: 10px;
+    width: 150px;
+    color: rgb(230, 228, 228)
+}
