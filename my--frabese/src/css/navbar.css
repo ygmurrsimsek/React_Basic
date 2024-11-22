@@ -51,7 +51,7 @@
 }
 .button-div{
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     align-items: center;
     justify-content: center;
 }
@@ -62,7 +62,20 @@
     background-color: #9b8c9e;
     border-radius: 2px;
     font-family: revert-layer;
-    margin: 10px;
-    width: 150px;
+    margin-right: 5px;
     color: rgb(230, 228, 228)
+}
+.button-google{
+    border: none;
+    padding: 5px 15px;
+    cursor: pointer;
+    background-color: #9b8c9e;
+    border-radius: 2px;
+    font-family: revert-layer;
+    margin-top: 10px;
+    color: rgb(230, 228, 228)
+}
+.icons{
+    margin-right: 5px;
+    color: rgb(255, 255, 255);
 }
