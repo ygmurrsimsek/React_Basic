@@ -21,7 +21,7 @@ function RegisterForm() {
     });
 
 return (
-<div>
+
     <div className='appp'>
     <form onSubmit={handleSubmit}>
         <div className='div-ayar'>
@@ -55,7 +55,6 @@ return (
     </form>
     </div>
     
-</div>
   )
 }
 
